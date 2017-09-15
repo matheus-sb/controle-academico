@@ -2,6 +2,10 @@
   "name": "controle-academico",
   "version": "0.1.0",
   "description": "Sistema de controle acadêmico",
+  "engines": {
+    "node": "v8.2.1",
+    "npm": "5.4.0"
+  },  
   "main": "server.js",
   "scripts": {
     "start": "node src/server.js",
