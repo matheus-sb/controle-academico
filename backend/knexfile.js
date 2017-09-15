@@ -14,7 +14,7 @@ Client.prototype.wrapIdentifier = (value) => {
 // sobrescreve função para converter camelCase em underline
 Formatter.prototype.wrapAsIdentifier = value => `"${(value || '').replace(/"/g, '""')}"`;
 
-const DATABASE_URL = 'postgres://postgres:postgres@localhost:5432/controle-academico'; //process.env.DATABASE_URL;
+const DATABASE_URL = 'postgres://postgres:postgres@localhost:5432/controle-academico';
 
 module.exports = {
 
@@ -23,36 +23,9 @@ module.exports = {
     connection: Object.assign({}, parse(DATABASE_URL))
   },
 
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
-  },
-
   production: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    },
-    pool: {
-      min: 2,
-      max: 10
-    },
-    migrations: {
-      tableName: 'knex_migrations'
-    }
+    client: Client,
+    connection: Object.assign({}, parse(process.env.DATABASE_URL || DATABASE_URL))
   }
 
 };

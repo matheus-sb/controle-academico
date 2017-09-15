@@ -7,7 +7,7 @@ exports.seed = function(knex, Promise) {
   ])
     .then(() =>{
       return knex('usuarios').insert([
-        {created_at: new Date(), updated_at: new Date(), cpf: '12345678901', nome: 'Matheus Barbosa', senha: '$2a$10$bAy1FlmvPF/Ndha3nfHf/ewVc4TIytlO3nQn9uTdlFbf9.b583Nxa', tipo_usuario: 'COLABORADOR'},
+        {created_at: new Date(), updated_at: new Date(), cpf: '91524861170', nome: 'Matheus Barbosa', senha: '$2a$10$bAy1FlmvPF/Ndha3nfHf/ewVc4TIytlO3nQn9uTdlFbf9.b583Nxa', tipo_usuario: 'COLABORADOR'},
         {created_at: new Date(), updated_at: new Date(), cpf: '09876543210', nome: 'Juliet Barbosa', senha: '$2a$10$EGP5xefH5Ezad3V2wzvQkuARTJr9Ve7s77xH41CV.dcau92tWSjI2', tipo_usuario: 'COLABORADOR'}
       ]);
     })
